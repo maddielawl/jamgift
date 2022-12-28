@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public string upKey = "w";
     public string downKey = "s";
 
+    public int speedMultiply = 0;
+
     // Rigidbody2D component attached to the player
     private Rigidbody2D rb;
 
@@ -26,19 +28,19 @@ public class PlayerController : MonoBehaviour
         float moveY = 0f;
         if (Input.GetKey(leftKey))
         {
-            moveX = -1f;
+            moveX = -1 * speedMultiply;
         }
         if (Input.GetKey(rightKey))
         {
-            moveX = 1f;
+            moveX = 1 * speedMultiply;
         }
         if (Input.GetKey(upKey))
         {
-            moveY = 1f;
+            moveY = 1 * speedMultiply;
         }
         if (Input.GetKey(downKey))
         {
-            moveY = -1f;
+            moveY = -1 * speedMultiply;
         }
 
         // Set the player's velocity based on the input values
