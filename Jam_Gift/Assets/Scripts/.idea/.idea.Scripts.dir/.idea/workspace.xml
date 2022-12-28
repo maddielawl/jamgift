@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../Assets/Scripts/BombDefuser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Assets/Scripts/CountdownTimer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Assets/Scripts/EnemyController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -44,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672230631312</updated>
-      <workItem from="1672230637983" duration="6816000" />
+      <workItem from="1672230637983" duration="8089000" />
     </task>
     <servers />
   </component>
