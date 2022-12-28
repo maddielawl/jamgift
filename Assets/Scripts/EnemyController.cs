@@ -6,6 +6,10 @@ public class EnemyController : MonoBehaviour
 {
     // List of points on the path
     public List<Vector2> pathPoints;
+    
+    
+    // List of points on the path
+    public List<Transform> pathTrans;
 
     // Rigidbody2D component attached to the enemy
     private Rigidbody2D rb;
@@ -34,10 +38,12 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         // Move towards the current path point
-        rb.MovePosition(Vector2.MoveTowards(transform.position, pathPoints[currentPathPoint], Time.deltaTime));
+        // rb.MovePosition(Vector2.MoveTowards(transform.position, pathPoints[currentPathPoint], Time.deltaTime));
+        rb.MovePosition(Vector2.MoveTowards(transform.position, pathTrans[currentPathPoint].position, Time.deltaTime));
 
         // Check if the enemy has reached the current path point
-        if (Vector2.Distance(transform.position, pathPoints[currentPathPoint]) < 0.1f)
+        // if (Vector2.Distance(transform.position, pathPoints[currentPathPoint]) < 0.1f)
+        if (Vector2.Distance(transform.position, pathTrans[currentPathPoint].position) < 0.1f)
         {
             // Increment the path point index
             currentPathPoint++;
@@ -88,7 +94,7 @@ public class EnemyController : MonoBehaviour
         Vector3 up = transform.rotation * Vector3.up;
 
         // Draw the cone using the DrawFrustum function
-        Gizmos.DrawFrustum(transform.position, visionAngle, visionRadius, 0.1f, 1f, forward, up);
+       // Gizmos.DrawFrustum(transform.position, visionAngle, visionRadius, 0.1f, 1f, forward, up);
     }
 }
 
