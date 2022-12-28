@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public string downKey = "s";
 
     public int speedMultiply = 0;
+    
+    List<GameObject> gifts = new List<GameObject>();
 
     // Rigidbody2D component attached to the player
     private Rigidbody2D rb;
@@ -46,5 +48,22 @@ public class PlayerController : MonoBehaviour
         // Set the player's velocity based on the input values
         rb.velocity = new Vector2(moveX, moveY);
     }
+    
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        // Check if the collider is a gift
+        if (collider.gameObject.tag == "Gift")
+        {
+            // Add the gift to the list
+            gifts.Add(collider.gameObject);
+
+            // Destroy the gift game object
+            Destroy(collider.gameObject);
+
+            // Print a message indicating the gift has been collected
+            Debug.Log("Gift collected! You now have " + gifts.Count + " gifts.");
+        }
+    }
+    
 }
 
